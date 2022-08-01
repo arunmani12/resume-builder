@@ -195,7 +195,6 @@
   width: 80%;
   margin: 1% auto;
   background-color: #17b486;
-  height: 100%;
 }
 
 .resume-header{
@@ -271,4 +270,21 @@
   font-weight: 500;
   text-transform: uppercase;
   color: #6b6c6b;
+}
+
+.educationwrapper{
+   margin-bottom: 15px;
+}
+
+.educationwrapper p{
+  margin: 0;
+}
+
+.resume-right{
+  box-sizing: border-box;
+  width: 60%;
+  height: 200px;
+  background-color: #fff;
+  padding: 10px 40px;
+
 }

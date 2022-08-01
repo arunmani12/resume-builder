@@ -48,10 +48,10 @@ const Resume = () => {
 
               {
                 userData.education.map((d,i)=>(
-                    <div key={i}>
-                        <p>{d.degree}</p>
-                        <p>{d.educationInstitue}</p>
-                        <p>{d.startYear} - {d.endYear}</p>
+                    <div key={i} className={classes.educationwrapper}>
+                        <p style={{color:'#1d3b5f',fontWeight:'500'}}>{d.degree}</p>
+                        <p style={{margin:'5px 0',fontSize:'14px',fontFamily:'monospace'}}>{d.educationInstitue}</p>
+                        <p style={{margin:'5px 0',fontSize:'14px',fontWeight:'500',fontFamily:'monospace'}}>{d.startYear} - {d.endYear}</p>
                     </div>
                 ))
               }
@@ -59,7 +59,12 @@ const Resume = () => {
               </div>
 
             </div>
-            <div></div>
+            <div className={classes['resume-right']}>
+                 <div>
+                     <h3 style={{color:'#303e54',fontWeight:'600'}}>A B O U T  &nbsp; M E</h3>
+                     <p style={{fontWeight:'400',fontFamily:'cursive'}}>{userData.about}</p>
+                 </div>
+            </div>
             </div>
             
 
