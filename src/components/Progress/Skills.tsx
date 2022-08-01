@@ -4,7 +4,7 @@ import { useState } from "react";
 import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
 
 
-const Model = ({addSkill}:{addSkill:(skill:string,Level:string)=>void}): JSX.Element => {
+const Model = ({addSkill,setModelOpen}:{setModelOpen:React.Dispatch<React.SetStateAction<Boolean>>,addSkill:(skill:string,Level:string)=>void}): JSX.Element => {
 
   const [skill,setSkill] = useState<UserSkills>({
     skill:'',
@@ -37,6 +37,7 @@ const Model = ({addSkill}:{addSkill:(skill:string,Level:string)=>void}): JSX.Ele
   return (
     <div className={classes["skill-model-holder"]}>
       <div className={classes["skill-model"]}>
+        <p className={classes.cross} onClick={()=>setModelOpen(false)}>&#10005;</p>
         <form>
           <label>Skill</label>
           <input type="text" style={{marginBottom:'1rem'}} value={skill?.skill} onChange={(e)=>onChanceHandler(e,"skill")}/>
@@ -63,11 +64,11 @@ const Skills = ({setSkills,skills}:{setSkills:(skills: UserSkills[])=>void,skill
   return (
     <div>
       <div className={classes["add-skills"]} onClick={()=>setModelOpen(true)}>Add Skills +</div>
-      {isModelOpen && <Model addSkill={addSkill}/>}
+      {isModelOpen && <Model addSkill={addSkill} setModelOpen={setModelOpen}/>}
       <div className={classes["skill-holder"]}>
       {
         skills.map((d,i)=>(
-          <div className={classes.skill}>
+          <div key={i} className={classes.skill}>
             <p>{d.skill}</p>
             <p className={classes["skill-score"]}>{d.score}</p>
           </div>

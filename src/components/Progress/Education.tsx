@@ -5,13 +5,16 @@ import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
 
 const Model = ({
   addEducation,
+  setModelOpen
 }: {
+  setModelOpen:React.Dispatch<React.SetStateAction<Boolean>>
   addEducation: ({
     educationInstitue,
     degree,
     startYear,
     endYear,
-  }: UserEducation) => void;
+  }: UserEducation,
+ ) => void;
 }): JSX.Element => {
 
 
@@ -49,7 +52,8 @@ const Model = ({
 
   return (
     <div className={classes["skill-model-holder"]}>
-      <div className={classes["skill-model"]}>
+      <div className={classes["skill-model"]} style={{marginTop:'3rem'}}>
+      <p className={classes.cross} onClick={()=>setModelOpen(false)}>&#10005;</p>
         <form>
           <label>Education Institue</label>
           <input
@@ -101,7 +105,6 @@ const Education = ({
     startYear,
     endYear,
   }: UserEducation): void => {
-    console.log(educationInstitue,'--')
     setEducation([
       ...education,
       { educationInstitue, degree, startYear, endYear },
@@ -115,7 +118,7 @@ const Education = ({
       <div className={classes["add-skills"]} onClick={() => setModelOpen(true)}>
         Add Education +
       </div>
-      {isModelOpen && <Model addEducation={addEducation} />}
+      {isModelOpen && <Model setModelOpen={setModelOpen} addEducation={addEducation} />}
       <div className={classes["education-holder"]}>
         {
         education.map((d,i)=>(

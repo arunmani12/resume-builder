@@ -1,0 +1,75 @@
+{
+    "address": [
+        {
+            "name": "Email Address",
+            "value": "arunmani12@gmail,com",
+            "icon": true
+        },
+        {
+            "name": "City",
+            "value": "thanjavur",
+            "icon": true
+        },
+        {
+            "name": "Phone number",
+            "value": "9323223231",
+            "icon": true
+        },
+        {
+            "name": "State",
+            "value": "Tamil Nadu",
+            "icon": true
+        },
+        {
+            "name": "Full Address",
+            "value": "57A Thiruvasal, Thambikkottai\nThanjavur 614704",
+            "icon": true
+        }
+    ],
+    "skills": [
+        {
+            "skill": "web development",
+            "score": "9"
+        },
+        {
+            "skill": "Mern Stack",
+            "score": "6"
+        },
+        {
+            "skill": "Python",
+            "score": "5"
+        },
+        {
+            "skill": "Css",
+            "score": "8"
+        },
+        {
+            "skill": "Html",
+            "score": "9"
+        }
+    ],
+    "education": [
+        {
+            "educationInstitue": "Anjalai Ammal Mahalingam Engineering College",
+            "degree": "B.Tech Information Technology",
+            "startYear": "2019",
+            "endYear": "2022"
+        },
+        {
+            "educationInstitue": "Higher Secondary Education",
+            "degree": "Laural Higher Secondary School",
+            "startYear": "2017",
+            "endYear": "2019"
+        },
+        {
+            "educationInstitue": "Secondary School Leaving Certificate",
+            "degree": "secondary school",
+            "startYear": "2014",
+            "endYear": "2017"
+        }
+    ],
+    "about": "Ambitious student with ski\nin Full Stack Web\nDevelopment (Mern Stack\nTakes initiative and works\nhard ,consistently and\nwillingness to learn",
+    "firstName": "Arun",
+    "position": "Web developer",
+    "lastName": "Mani"
+}

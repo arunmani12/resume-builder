@@ -11,6 +11,8 @@ import type {
 import Skills from "./Skills";
 import Education from "./Education";
 import About from "./About";
+import Resume from "./Resume";
+
 
 const Progress = (): JSX.Element => {
   const [step, setStep] = useState<number>(1);
@@ -23,6 +25,9 @@ const Progress = (): JSX.Element => {
     position: "",
     lastName: "",
   });
+
+  
+  console.log(userData)
 
   const setAdress = (Address: UserAddress[]): void => {
     setUserData((prv) => {
@@ -53,7 +58,7 @@ const Progress = (): JSX.Element => {
 
   return (
     <div className={classes.progress}>
-      <div className={classes["progress-content"]}>
+     {step!==5 &&<> <div className={classes["progress-content"]}>
         {step === 1 && (
           <About individualValue={individualValue} userData={userData} />
         )}
@@ -72,8 +77,11 @@ const Progress = (): JSX.Element => {
           />
         )}
         {/* progress Bar */}
-        <ProgressBar currentStep={step} setStep={setStep} totalStep={5} />
+        <ProgressBar currentStep={step} setStep={setStep} totalStep={4} />
       </div>
+       </>
+      }
+      {step===5 && <Resume/>}
     </div>
   );
 };
