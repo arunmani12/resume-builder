@@ -3,8 +3,7 @@ import classes from "./Progress.module.css";
 import data from './Object.json'
 import {UserObject} from '../types/progress'
 
-const Resume = () => {
-  const userData:UserObject = data
+  const Resume = ({userData,setStep}:{userData:UserObject,setStep: React.Dispatch<React.SetStateAction<number>>}) => {
 
     console.log(data)
   return (
@@ -13,13 +12,13 @@ const Resume = () => {
            <div className={classes.resume}>
             <div className={classes['resume-header']}>
                 <div className={classes.resumelogo}>
-                    <p>A/M</p>
+                    <p>{userData.firstName[0]}/{userData.lastName[0]}</p>
                 </div>
                 <div className={classes['resume-header-content']}>
-                    <p style={{marginBottom:'-5px'}}>Arun</p>
-                    <p style={{marginBottom:'-10px'}}>Mani</p>
+                    <p style={{marginBottom:'-5px'}}>{userData.firstName}</p>
+                    <p style={{marginBottom:'-10px'}}>{userData.lastName}</p>
                     <hr style={{width:'100%'}}/>
-                    <p style={{marginTop:'-10px'}} className={classes.resumelogopos}>F u l l S t a c k D e v e l o p e r ( M E R N )</p>
+                    <p style={{marginTop:'-10px',letterSpacing:'10px',textTransform:'uppercase'}} className={classes.resumelogopos}>{userData.position}</p>
                 </div>
             </div>
             
@@ -60,11 +59,34 @@ const Resume = () => {
 
             </div>
             <div className={classes['resume-right']}>
+              <div className={classes.backBtn} ><i onClick={()=>setStep((prv)=>prv-1)} className="fa-solid fa-backward"></i>Back</div>
                  <div>
                      <h3 style={{color:'#303e54',fontWeight:'600'}}>A B O U T  &nbsp; M E</h3>
                      <p style={{fontWeight:'400',fontFamily:'cursive'}}>{userData.about}</p>
+                     <hr/>
+                     <h3 style={{color:'#303e54',fontWeight:'600'}}>E X P E R I E N C E</h3>
+                     {
+                      userData.experience.map((d,i)=>(
+                         <div className={classes.educationwrapper} key={i}>
+                           <p style={{color:'#1d3b5f',fontWeight:'500',fontSize:'18px'}}>{d.companyName}</p>
+                           <p style={{margin:'5px 0',fontSize:'16px',fontFamily:'monospace'}}>{d.posisitonName}</p>
+                           <p style={{margin:'5px 0',fontSize:'16px', fontWeight:'500',fontFamily:'monospace'}}>{d.durination}</p>
+                         </div>
+                      ))
+                     }
+                     <hr/>
+                     <h3 style={{color:'#303e54',fontWeight:'600'}}>P R O J E C T S</h3>
+                     {
+                      userData.project.map((d,i)=>(
+                        <div className={classes.educationwrapper} key={i}>
+                          <p style={{color:'#1d3b5f',fontWeight:'500',fontSize:'18px'}}>{d.name}</p>
+                          <p style={{margin:'5px 0',fontSize:'16px',fontFamily:'monospace'}}>{d.about}</p>
+                        </div>
+                     ))
+                     }
                  </div>
             </div>
+
             </div>
             
 

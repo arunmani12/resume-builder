@@ -72,5 +72,32 @@
     "firstName": "Arun",
     "position": "Web developer",
     "lastName": "Mani",
-    "experience":[]
+    "experience":[
+        {
+            "posisitonName": "Web Development",
+            "companyName": "Incresco Technologies Pvt Ltd",
+            "durination": "6 months"
+        },
+        {
+            "posisitonName": "Web Development",
+            "companyName": "Coding Space India ",
+            "durination": "3 months"
+        }
+    ],
+    "project":[
+            {
+                "name": "Anu app",
+                "about": "Web Development"
+            },
+            {
+                "name": "Anna university updated",
+                "about": "Web App for Anna University Colleges using Geocoding (Mapbox api)"
+            },
+            {
+                "name": "taki booking app",
+                "about": "Taxi Booking web Application using react, node, mongo db, Express Js , Razor pay payment integration ,Mapbox Distance API"
+            }
+        ]
 }
+
+

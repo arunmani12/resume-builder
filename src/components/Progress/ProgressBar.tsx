@@ -22,14 +22,16 @@ const ProgressBar = ({ currentStep, totalStep, setStep }: Bar):JSX.Element => {
         ></div>
       </div>
       <div style={{ display: "flex" }}>
-        <div
-          className={classes.circle}
-          onClick={() => setStep((prv) => prv - 1)}
-        ></div>
-        <div
-          className={classes.circle}
-          onClick={() => setStep((prv) => prv + 1)}
-        ></div>
+          <i style={{
+            marginLeft: '20px',
+            fontSize: '44px',
+            color: '#17b486'
+          }} onClick={() => setStep((prv) => prv - 1)} className="fa-solid fa-backward"></i>
+          <i style={{
+              marginLeft: '20px',
+              fontSize: '44px',
+              color: '#17b486'
+          }} onClick={() => setStep((prv) => prv + 1)} className="fa-solid fa-forward"></i>
       </div>
     </div>
   );

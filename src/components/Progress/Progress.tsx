@@ -7,13 +7,15 @@ import type {
   UserObject,
   UserSkills,
   UserEducation,
-  UserExperience
+  UserExperience,
+  UserProject
 } from "../types/progress";
 import Skills from "./Skills";
 import Education from "./Education";
 import About from "./About";
 import Resume from "./Resume";
 import Experience from "./Experience";
+import Project from "./Project";
 
 
 const Progress = (): JSX.Element => {
@@ -23,6 +25,7 @@ const Progress = (): JSX.Element => {
     skills: [],
     education: [],
     experience:[],
+    project:[],
     about: "",
     firstName: "",
     position: "",
@@ -47,13 +50,19 @@ const Progress = (): JSX.Element => {
   const setEducation = (education: UserEducation[]): void => {
     console.log(education);
     setUserData((prv) => {
-      return { ...prv, education: education };
+      return { ...prv, education };
     });
   };
 
   const setUserExperience = (experience:UserExperience[]):void =>{
     setUserData((prv) => {
-      return { ...prv, experience: experience };
+      return { ...prv, experience };
+    });
+  }
+
+  const setProject = (project:UserProject[]):void=>{
+    setUserData((prv) => {
+      return { ...prv, project };
     });
   }
 
@@ -62,6 +71,8 @@ const Progress = (): JSX.Element => {
       return { ...prv, [value]: content };
     });
   };
+
+
 
   console.log(userData)
 
@@ -90,12 +101,17 @@ const Progress = (): JSX.Element => {
             <Experience setUserExperience={setUserExperience} experience={userData.experience}/>
           )
         }
+        {
+          step===6 && (
+            <Project setProject={setProject} project={userData.project}/>
+          )
+        }
         {/* progress Bar */}
         <ProgressBar currentStep={step} setStep={setStep} totalStep={6} />
       </div>
        </>
       }
-      {step===7 && <Resume/>}
+      {step===7 && <Resume setStep={setStep} userData={userData}/>}
     </div>
   );
 };

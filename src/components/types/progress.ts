@@ -22,11 +22,17 @@ export interface UserExperience{
   durination:string
 }
 
+export interface UserProject{
+  name:string
+  about:string
+}
+
 export interface UserObject {
   address: UserAddress[];
   skills: UserSkills[];
   education: UserEducation[];
   experience:UserExperience[];
+  project:UserProject[]
   about: string;
   firstName: string;
   lastName: string;
