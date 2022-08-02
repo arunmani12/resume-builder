@@ -73,7 +73,7 @@ const Model = ({
             value={experience.durination}
             onChange={(e) => onChanceHandler(e, "durination")}
           />
-          <BtnBh text="submit" onClick={onClickHandler} />
+          <BtnBh onClick={onClickHandler} >submit</BtnBh>
         </form>
       </div>
     </div>

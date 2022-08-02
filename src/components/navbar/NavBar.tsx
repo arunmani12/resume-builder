@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import classes from './navbar.module.css'
 
 const NavBar = (): JSX.Element => {
@@ -17,7 +18,7 @@ const NavBar = (): JSX.Element => {
         <ul>
           {navBarLinks.map((d, i) => (
             <li key={i}>
-              <a href="#">{d}</a>
+              <Link to={d==='Home' ? '/' : '#'}>{d}</Link>
             </li>
           ))}
         </ul>

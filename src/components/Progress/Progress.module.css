@@ -183,9 +183,8 @@
 
 .resume{
   box-sizing: border-box;
-  width: 80%;
-  margin: 1% auto;
-  background-color: #17b486;
+  width: 100%;
+  /* margin: 1% auto; */
 }
 
 .resume-header{
@@ -289,5 +288,15 @@
   font-size: 22px;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
+  cursor: pointer;
+}
+
+.downloadBtn{
+  position:absolute;
+  bottom:30px;
+  right:200px;
+  margin-bottom: -2.9px;
+  font-weight: 500;
+  font-size: 26px;
   cursor: pointer;
 }

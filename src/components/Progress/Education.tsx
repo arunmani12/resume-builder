@@ -83,7 +83,7 @@ const Model = ({
             value={edu.endYear}
             onChange={(e) => onChanceHandler(e, "endYear")}
           />
-          <BtnBh text="submit" onClick={onClickHandler} />
+          <BtnBh onClick={onClickHandler} >Submit</BtnBh>
         </form>
       </div>
     </div>

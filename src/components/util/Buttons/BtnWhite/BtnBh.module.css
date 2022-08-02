@@ -46,3 +46,9 @@
 .btn-bh:active {
   top: 2px;
 }
+
+.btn-bh a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+}

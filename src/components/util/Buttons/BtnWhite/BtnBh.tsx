@@ -1,8 +1,8 @@
 import classes from "./BtnBh.module.css"
 
-const BtnBh = ({text,onClick}:{text:string,onClick?:()=>void}):JSX.Element => {
+const BtnBh = ({onClick,children}:{onClick?:()=>void,children:JSX.Element | string}):JSX.Element => {
   return (
-    <button type="button" onClick={onClick} className={`${classes["custom-btn"]} ${classes["btn-bh"]}`}>{text}</button>
+    <button type="button" onClick={onClick} className={`${classes["custom-btn"]} ${classes["btn-bh"]}`}>{children}</button>
   )
 }
 

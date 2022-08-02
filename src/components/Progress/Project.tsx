@@ -58,7 +58,7 @@ const Model = ({
             value={project.about}
             onChange={(e) => onChanceHandler(e, "about")}
           />
-          <BtnBh text="submit" onClick={onClickHandler} />
+          <BtnBh onClick={onClickHandler} >submit</BtnBh>
         </form>
       </div>
     </div>

@@ -2,9 +2,15 @@ import classes from "./Progress.module.css";
 import { UserSkills,Name,Data } from "../types/progress";
 import { useState } from "react";
 import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
+import { showErrModel } from "../../global";
 
 
-const Model = ({addSkill,setModelOpen}:{setModelOpen:React.Dispatch<React.SetStateAction<Boolean>>,addSkill:(skill:string,Level:string)=>void}): JSX.Element => {
+interface ModelProps {
+  setModelOpen:React.Dispatch<React.SetStateAction<Boolean>>,
+  addSkill:(skill:string,Level:string)=>void,
+}
+
+const Model = ({addSkill,setModelOpen}:ModelProps): JSX.Element => {
 
   const [skill,setSkill] = useState<UserSkills>({
     skill:'',
@@ -29,7 +35,10 @@ const Model = ({addSkill,setModelOpen}:{setModelOpen:React.Dispatch<React.SetSta
   const onClickHandler = () =>{
     let userSkill = skill.skill
     let userScore = skill.score
-    if(userSkill.length <=0 || userScore.length<=0) return
+    if(userSkill.length <=0 || userScore.length<=0) {
+      showErrModel("please provide skill name")
+      return
+    }
     addSkill(userSkill,userScore)
     setSkill({score:'',skill:''})
   }
@@ -43,14 +52,14 @@ const Model = ({addSkill,setModelOpen}:{setModelOpen:React.Dispatch<React.SetSta
           <input type="text" style={{marginBottom:'1rem'}} value={skill?.skill} onChange={(e)=>onChanceHandler(e,"skill")}/>
           <label>Level</label>
           <input type="range" min={1} max={10} value={skill?.score} style={{marginBottom:'1rem'}} onChange={(e)=>onChanceHandler(e,"score")}/>
-          <BtnBh text="submit" onClick={onClickHandler}/>
+          <BtnBh onClick={onClickHandler}>Submit</BtnBh>
         </form>
       </div>
     </div>
   );
 };
 
-const Skills = ({setObject,skills}:{setObject:(name:Name,data:Data)=>void,skills:UserSkills[]}): JSX.Element => {
+const Skills = ({setObject,skills}:{setObject:(name:Name,data:Data)=>void, skills:UserSkills[]}): JSX.Element => {
 
   const [isModelOpen,setModelOpen] = useState<Boolean>(false)
 

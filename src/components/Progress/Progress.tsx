@@ -45,12 +45,6 @@ const Progress = (): JSX.Element => {
   }
 
 
-  const setProject = (project:UserProject[]):void=>{
-    setUserData((prv) => {
-      return { ...prv, project };
-    });
-  }
-
   const individualValue = (value: string, content: string): void => {
     setUserData((prv) => {
       return { ...prv, [value]: content };
@@ -58,8 +52,6 @@ const Progress = (): JSX.Element => {
   };
 
 
-
-  console.log(userData)
 
   return (
     <div className={classes.progress}>
@@ -72,7 +64,7 @@ const Progress = (): JSX.Element => {
         )}
 
         {step === 3 && (
-          <Skills setObject={setObject} skills={userData.skills} />
+          <Skills setObject={setObject} skills={userData.skills}/>
         )}
 
         {step === 4 && (
