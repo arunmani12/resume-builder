@@ -11,9 +11,9 @@ const NavBar = (): JSX.Element => {
 
   return (
     <header className={classes.header}>
-      <a className={classes.logo} href="#">
+      <Link className={classes.logo} to="/">
         A/M
-      </a>
+      </Link>
       <nav className={classes.nav}>
         <ul>
           {navBarLinks.map((d, i) => (

@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import type { UserProject ,Name,Data} from "../types/progress";
 import BtnBh from '../util/Buttons/BtnWhite/BtnBh';
 import classes from "./Progress.module.css";
+import { showErrModel } from "../../global";
 
 
 const Model = ({
@@ -31,6 +32,11 @@ const Model = ({
   };
 
   const onClickHandler = () => {
+    const isEmpty = Object.values(project).some(d=>d === null || d ==="")
+    if(isEmpty){
+      showErrModel("Please enter all the fields")
+      return
+    }
     addProject(project);
     setProject({
       name:"",
@@ -75,6 +81,9 @@ const Project = ({project,setObject}:ProjectProps):JSX.Element => {
   const [modelOpen,setModelOpen] = useState<Boolean>(false)
 
   const addProject = (projectObject: UserProject): void => {
+    if(project.length>=4){
+      showErrModel('currently 4 projects is allowed')
+    }
     setObject('project',[
       ...project,
       { ...projectObject },

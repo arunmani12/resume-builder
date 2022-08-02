@@ -84,7 +84,7 @@ const Progress = (): JSX.Element => {
           )
         }
         {/* progress Bar */}
-        <ProgressBar currentStep={step} setStep={setStep} totalStep={6} />
+        <ProgressBar userData={userData} currentStep={step} setStep={setStep} totalStep={6} />
       </div>
        </>
       }

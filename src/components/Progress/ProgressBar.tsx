@@ -1,12 +1,16 @@
 import classes from "./Progress.module.css";
+import { showErrModel } from "../../global";
+import { UserObject } from "../types/progress";
+
 
 interface Bar {
   setStep: React.Dispatch<React.SetStateAction<number>>;
   totalStep: number;
   currentStep: number;
+  userData:UserObject
 }
 
-const ProgressBar = ({ currentStep, totalStep, setStep }: Bar):JSX.Element => {
+const ProgressBar = ({ currentStep, totalStep, userData, setStep }: Bar):JSX.Element => {
   let percent: string = 100 * (currentStep / totalStep) + "%";
 
   const leftClickHandler = ():void =>{
@@ -16,6 +20,30 @@ const ProgressBar = ({ currentStep, totalStep, setStep }: Bar):JSX.Element => {
 
   const rightClickHandler = ():void =>{
     if(currentStep<=7) {
+    if(currentStep===3){
+      if(userData.skills.length<3){
+        showErrModel("Please atleast Enter 3 Skills")
+        return
+      }
+    }
+    if(currentStep===4){
+      if(userData.education.length<2){
+        showErrModel("Please atleast Enter 2 education status")
+        return
+      }
+    }
+    if(currentStep===5){
+      if(userData.experience.length<1){
+        showErrModel("Please atleast Enter 1 experience status")
+        return
+      }
+    }
+    if(currentStep===6){
+      if(userData.project.length<2){
+        showErrModel("Please atleast Enter 2 project status")
+        return
+      }
+    }
     setStep((prv) => prv + 1)
   }}
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { showErrModel } from "../../global";
 import classes from "./Progress.module.css";
 import type { UserExperience ,Name,Data} from "../types/progress";
 import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
@@ -37,6 +37,11 @@ const Model = ({
   };
 
   const onClickHandler = () => {
+    const isEmpty = Object.values(experience).some(d=>d === null || d ==="")
+    if(isEmpty){
+      showErrModel("Please enter all the fields")
+      return
+    }
     addExperience(experience);
     setExperience({
       posisitonName: "",
@@ -91,6 +96,10 @@ const Experience = ({
     companyName,
     durination,
   }: UserExperience): void => {
+    if(experience.length>=3){
+      showErrModel("currenty 3 is allowed")
+      return
+    }
     setObject('experience',[
       ...experience,
       { posisitonName, companyName, durination },

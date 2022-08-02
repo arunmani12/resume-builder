@@ -65,6 +65,10 @@ const Skills = ({setObject,skills}:{setObject:(name:Name,data:Data)=>void, skill
 
 
   const addSkill = (skill:string,Level:string):void =>{
+     if(skills.length===5){
+      showErrModel("skill more than 5 currently not allowed :)")
+      return
+     }
      setObject('skills',[...skills,{skill,score:Level}])
      setModelOpen(false)
   }

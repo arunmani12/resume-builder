@@ -2,6 +2,8 @@ import classes from "./Progress.module.css";
 import { UserEducation,Data,Name } from "../types/progress";
 import { useState } from "react";
 import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
+import { showErrModel } from "../../global";
+
 
 const Model = ({
   addEducation,
@@ -40,6 +42,11 @@ const Model = ({
   };
 
     const onClickHandler = () =>{
+    const isEmpty = Object.values(edu).some(d=>d === null || d ==="")
+    if(isEmpty){
+      showErrModel("Please enter all the fields")
+      return
+    }
      addEducation(edu)
       setEdu({
         educationInstitue: "",
@@ -105,6 +112,10 @@ const Education = ({
     startYear,
     endYear,
   }: UserEducation): void => {
+    if(education.length >=3){
+      showErrModel("Sorry only 3 is allowed")
+      return
+    }
     setObject('education',[
       ...education,
       { educationInstitue, degree, startYear, endYear },

@@ -1,14 +1,12 @@
 import React,{useRef} from 'react'
 import classes from "./Progress.module.css";
-import data from './Object.json'
+// import data from './Object.json'
 import {UserObject} from '../types/progress'
 import { useReactToPrint } from 'react-to-print';
 import ResumeContent from './ResumeContent';
 
 
 const Resume = ({userData,setStep}:{userData:UserObject,setStep: React.Dispatch<React.SetStateAction<number>>}) => {
-
-  userData=data
 
   const componentRef = useRef(null);
   const handlePrint = useReactToPrint({

@@ -124,8 +124,6 @@ const ResumeContent = ({
           </div>
         </div>
         <div className={classes["resume-right"]}>
-          {/* <div className={classes.backBtn} onClick={()=>setStep((prv)=>prv-1)}><i className="fa-solid fa-backward"></i>Back</div> */}
-
           <div>
             <h3 style={{ color: "#303e54", fontWeight: "600" }}>
               A B O U T &nbsp; M E
