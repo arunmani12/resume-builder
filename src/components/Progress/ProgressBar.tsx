@@ -58,6 +58,7 @@ const ProgressBar = ({ currentStep, totalStep, userData, setStep }: Bar):JSX.Ele
             transition: "all 500ms",
           }}
         ></div>
+        {currentStep} / {totalStep}
       </div>
       <div style={{ display: "flex" }}>
           <i style={{

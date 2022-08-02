@@ -57,7 +57,7 @@ const Model = ({
             onChange={(e) => onChanceHandler(e, "name")}
           />
 
-          <label>About</label>
+          <label>Describiton</label>
           <input
             type="text"
             style={{ marginBottom: "1rem" }}

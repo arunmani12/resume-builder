@@ -8,6 +8,8 @@ import ResumeContent from './ResumeContent';
 
 const Resume = ({userData,setStep}:{userData:UserObject,setStep: React.Dispatch<React.SetStateAction<number>>}) => {
 
+  // userData = data
+
   const componentRef = useRef(null);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,

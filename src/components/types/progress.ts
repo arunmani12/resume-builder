@@ -1,7 +1,7 @@
 export interface UserAddress {
   name: string;
   value: string;
-  icon: boolean;
+  icon: string;
 }
 
 export interface UserSkills {

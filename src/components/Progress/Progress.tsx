@@ -3,12 +3,7 @@ import Address from "./Address";
 import classes from "./Progress.module.css";
 import ProgressBar from "./ProgressBar";
 import type {
-  UserAddress,
   UserObject,
-  UserSkills,
-  UserEducation,
-  UserExperience,
-  UserProject,
   Name,
   Data
 } from "../types/progress";

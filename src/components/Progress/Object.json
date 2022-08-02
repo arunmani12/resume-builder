@@ -3,27 +3,27 @@
         {
             "name": "Email Address",
             "value": "arunmani12@gmail,com",
-            "icon": true
+            "icon": "fa-solid fa-at"
         },
         {
             "name": "City",
             "value": "thanjavur",
-            "icon": true
+            "icon": "fa-solid fa-location-dot"
         },
         {
             "name": "Phone number",
             "value": "9323223231",
-            "icon": true
+            "icon": "fa-solid fa-phone"
         },
         {
             "name": "State",
             "value": "Tamil Nadu",
-            "icon": true
+            "icon": "fa-solid fa-road"
         },
         {
             "name": "Full Address",
             "value": "57A Thiruvasal, Thambikkottai\nThanjavur 614704",
-            "icon": true
+            "icon": "fa-solid fa-map-location"
         }
     ],
     "skills": [
@@ -99,5 +99,8 @@
             }
         ]
 }
+
+
+
 
 

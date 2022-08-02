@@ -47,7 +47,7 @@ const ResumeContent = ({
               <p className={classes["font-text"]} key={i}>
                 <i
                   style={{ marginRight: "10px" }}
-                  className="fa-solid fa-phone"
+                  className={d.icon}
                 ></i>
                 {d.value}
               </p>
