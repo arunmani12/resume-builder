@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Progress.module.css";
-import type {UserAddress} from '../types/progress'
+import type {UserAddress,  Name,
+  Data} from '../types/progress'
 
 
 interface InputHolderProps{
@@ -40,10 +41,10 @@ const InputFieldHolder = ({
 };
 
 const Address = ({
-  setAddress,
+  setObject,
   address,
 }: {
-  setAddress: (address: UserAddress[]) => void;
+  setObject: (name:Name,data:Data) => void;
   address: UserAddress[];
 }):JSX.Element => {
 
@@ -60,11 +61,11 @@ const Address = ({
       let index = address.indexOf(item);
       let tmpAddress = [...address];
       tmpAddress[index] = { name, value, icon: true };
-      setAddress(tmpAddress);
+      setObject('address',tmpAddress);
     } else {
       let tmpAddress = [...address];
       tmpAddress.push({ name, value, icon: true });
-      setAddress(tmpAddress);
+      setObject('address',tmpAddress);
     }
   };
 

@@ -38,3 +38,6 @@ export interface UserObject {
   lastName: string;
   position: string;
 }
+
+export type Name = "address" | "skills" | "education" | "experience" | "project"
+export type Data = UserAddress[] | UserSkills[] | UserEducation[] | UserExperience[] | UserProject[]

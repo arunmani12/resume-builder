@@ -1,5 +1,5 @@
 import classes from "./Progress.module.css";
-import { UserEducation } from "../types/progress";
+import { UserEducation,Data,Name } from "../types/progress";
 import { useState } from "react";
 import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
 
@@ -91,10 +91,10 @@ const Model = ({
 };
 
 const Education = ({
-  setEducation,
+  setObject,
   education,
 }: {
-  setEducation: (education: UserEducation[]) => void;
+  setObject: (name:Name,data:Data) => void;
   education: UserEducation[];
 }): JSX.Element => {
   const [isModelOpen, setModelOpen] = useState<Boolean>(false);
@@ -105,7 +105,7 @@ const Education = ({
     startYear,
     endYear,
   }: UserEducation): void => {
-    setEducation([
+    setObject('education',[
       ...education,
       { educationInstitue, degree, startYear, endYear },
     ]);

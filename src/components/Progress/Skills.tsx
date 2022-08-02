@@ -1,5 +1,5 @@
 import classes from "./Progress.module.css";
-import { UserSkills } from "../types/progress";
+import { UserSkills,Name,Data } from "../types/progress";
 import { useState } from "react";
 import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
 
@@ -50,13 +50,13 @@ const Model = ({addSkill,setModelOpen}:{setModelOpen:React.Dispatch<React.SetSta
   );
 };
 
-const Skills = ({setSkills,skills}:{setSkills:(skills: UserSkills[])=>void,skills:UserSkills[]}): JSX.Element => {
+const Skills = ({setObject,skills}:{setObject:(name:Name,data:Data)=>void,skills:UserSkills[]}): JSX.Element => {
 
   const [isModelOpen,setModelOpen] = useState<Boolean>(false)
 
 
   const addSkill = (skill:string,Level:string):void =>{
-     setSkills([...skills,{skill,score:Level}])
+     setObject('skills',[...skills,{skill,score:Level}])
      setModelOpen(false)
   }
 

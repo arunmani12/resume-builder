@@ -5,7 +5,7 @@ import {UserObject} from '../types/progress'
 
   const Resume = ({userData,setStep}:{userData:UserObject,setStep: React.Dispatch<React.SetStateAction<number>>}) => {
 
-    console.log(data)
+  
   return (
     <div className={classes['progress-content']} style={{width:'95%',flexDirection:'row'}}>
         <div className={classes['resume-holder']}>
@@ -59,7 +59,7 @@ import {UserObject} from '../types/progress'
 
             </div>
             <div className={classes['resume-right']}>
-              <div className={classes.backBtn} ><i onClick={()=>setStep((prv)=>prv-1)} className="fa-solid fa-backward"></i>Back</div>
+              <div className={classes.backBtn} onClick={()=>setStep((prv)=>prv-1)}><i className="fa-solid fa-backward"></i>Back</div>
                  <div>
                      <h3 style={{color:'#303e54',fontWeight:'600'}}>A B O U T  &nbsp; M E</h3>
                      <p style={{fontWeight:'400',fontFamily:'cursive'}}>{userData.about}</p>

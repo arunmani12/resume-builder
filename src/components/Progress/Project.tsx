@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import type { UserProject } from "../types/progress";
+import type { UserProject ,Name,Data} from "../types/progress";
 import BtnBh from '../util/Buttons/BtnWhite/BtnBh';
 import classes from "./Progress.module.css";
 
@@ -67,15 +67,15 @@ const Model = ({
 
 interface ProjectProps {
   project: UserProject[];
-  setProject: (project: UserProject[]) => void;
+  setObject: (name:Name,data:Data) => void;
 }
 
-const Project = ({project,setProject}:ProjectProps):JSX.Element => {
+const Project = ({project,setObject}:ProjectProps):JSX.Element => {
 
   const [modelOpen,setModelOpen] = useState<Boolean>(false)
 
   const addProject = (projectObject: UserProject): void => {
-    setProject([
+    setObject('project',[
       ...project,
       { ...projectObject },
     ]);

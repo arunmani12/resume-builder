@@ -8,7 +8,9 @@ import type {
   UserSkills,
   UserEducation,
   UserExperience,
-  UserProject
+  UserProject,
+  Name,
+  Data
 } from "../types/progress";
 import Skills from "./Skills";
 import Education from "./Education";
@@ -35,30 +37,13 @@ const Progress = (): JSX.Element => {
   
   console.log(userData)
 
-  const setAdress = (Address: UserAddress[]): void => {
-    setUserData((prv) => {
-      return { ...prv, address: Address };
-    });
-  };
 
-  const setSkills = (skills: UserSkills[]): void => {
+  const setObject = (name:Name,data:Data) =>{
     setUserData((prv) => {
-      return { ...prv, skills: skills };
-    });
-  };
-
-  const setEducation = (education: UserEducation[]): void => {
-    console.log(education);
-    setUserData((prv) => {
-      return { ...prv, education };
-    });
-  };
-
-  const setUserExperience = (experience:UserExperience[]):void =>{
-    setUserData((prv) => {
-      return { ...prv, experience };
+      return { ...prv, [name]: data };
     });
   }
+
 
   const setProject = (project:UserProject[]):void=>{
     setUserData((prv) => {
@@ -83,27 +68,27 @@ const Progress = (): JSX.Element => {
           <About individualValue={individualValue} userData={userData} />
         )}
         {step === 2 && (
-          <Address address={userData.address} setAddress={setAdress} />
+          <Address address={userData.address} setObject={setObject} />
         )}
 
         {step === 3 && (
-          <Skills setSkills={setSkills} skills={userData.skills} />
+          <Skills setObject={setObject} skills={userData.skills} />
         )}
 
         {step === 4 && (
           <Education
-            setEducation={setEducation}
+          setObject={setObject}
             education={userData.education}
           />
         )}
         {
           step===5 && (
-            <Experience setUserExperience={setUserExperience} experience={userData.experience}/>
+            <Experience setObject={setObject} experience={userData.experience}/>
           )
         }
         {
           step===6 && (
-            <Project setProject={setProject} project={userData.project}/>
+            <Project setObject={setObject} project={userData.project}/>
           )
         }
         {/* progress Bar */}

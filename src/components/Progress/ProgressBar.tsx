@@ -9,6 +9,16 @@ interface Bar {
 const ProgressBar = ({ currentStep, totalStep, setStep }: Bar):JSX.Element => {
   let percent: string = 100 * (currentStep / totalStep) + "%";
 
+  const leftClickHandler = ():void =>{
+    if(currentStep>1) {
+    setStep((prv) => prv - 1)
+  }}
+
+  const rightClickHandler = ():void =>{
+    if(currentStep<=7) {
+    setStep((prv) => prv + 1)
+  }}
+
   return (
     <div className={classes["progress-bar-holder"]}>
       <div className={classes.bar}>
@@ -26,12 +36,12 @@ const ProgressBar = ({ currentStep, totalStep, setStep }: Bar):JSX.Element => {
             marginLeft: '20px',
             fontSize: '44px',
             color: '#17b486'
-          }} onClick={() => setStep((prv) => prv - 1)} className="fa-solid fa-backward"></i>
+          }} onClick={leftClickHandler} className="fa-solid fa-backward"></i>
           <i style={{
               marginLeft: '20px',
               fontSize: '44px',
               color: '#17b486'
-          }} onClick={() => setStep((prv) => prv + 1)} className="fa-solid fa-forward"></i>
+          }} onClick={rightClickHandler} className="fa-solid fa-forward"></i>
       </div>
     </div>
   );

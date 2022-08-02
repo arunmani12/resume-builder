@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 import classes from "./Progress.module.css";
-import type { UserExperience } from "../types/progress";
+import type { UserExperience ,Name,Data} from "../types/progress";
 import BtnBh from "../util/Buttons/BtnWhite/BtnBh";
 
 interface ExperienceProps {
   experience: UserExperience[];
-  setUserExperience: (experience: UserExperience[]) => void;
+  setObject: (name:Name,data:Data) => void;
 }
 
 const Model = ({
@@ -81,7 +81,7 @@ const Model = ({
 };
 
 const Experience = ({
-  setUserExperience,
+  setObject,
   experience,
 }: ExperienceProps): JSX.Element => {
   const [modelOpen, setModelOpen] = useState<Boolean>(false);
@@ -91,7 +91,7 @@ const Experience = ({
     companyName,
     durination,
   }: UserExperience): void => {
-    setUserExperience([
+    setObject('experience',[
       ...experience,
       { posisitonName, companyName, durination },
     ]);
