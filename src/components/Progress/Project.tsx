@@ -92,7 +92,7 @@ const Project = ({project,setObject}:ProjectProps):JSX.Element => {
   };
 
   return (
-    <div>
+    <div style={{height:'83%'}}>
       {modelOpen && <Model addProject={addProject} setModelOpen={setModelOpen}/>}
       <div className={classes["add-skills"]} onClick={()=>setModelOpen(true)}>Add Project +</div>
 

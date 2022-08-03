@@ -125,7 +125,7 @@ const Education = ({
 
 
   return (
-    <div style={{height:'100%'}}>
+    <div style={{height:'83%'}}>
       <div className={classes["add-skills"]} onClick={() => setModelOpen(true)}>
         Add Education +
       </div>

@@ -108,7 +108,7 @@ const Experience = ({
   };
 
   return (
-    <div>
+    <div style={{height:'83%'}}>
       {modelOpen && <Model addExperience={addExperience} setModelOpen={setModelOpen} />}
       <div className={classes["add-skills"]} onClick={()=>setModelOpen(true)}>Add Experience +</div>
 

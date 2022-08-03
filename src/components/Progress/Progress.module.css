@@ -153,8 +153,8 @@
 .education-holder{
   /* background-color: #fff; */
   border-radius: 10px;
-  /* height: 100%;
-  overflow-y: scroll; */
+  height: 80%;
+  overflow-y: scroll; 
 }
 
 .education{

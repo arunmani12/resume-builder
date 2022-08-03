@@ -118,7 +118,7 @@ const Address = ({
       <div style={{ marginTop: "1.5rem" }}>
         <label>Full Address</label>
         <textarea
-          rows={5}
+          rows={3}
           style={{ width: "100%" }}
           value={
             address.find((d) => d.name === 'Full Address')

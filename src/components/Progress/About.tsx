@@ -31,9 +31,6 @@ const About = ({individualValue,userData}:{individualValue:(value:string,content
 
   return (
     <div>
-        <div className={classes["add-skills"]}>
-        About Me
-      </div>
       <form>
         <div style={{ marginTop: "1.5rem" }} className={classes["flex-wrapper"]}>
             <InputFieldHolder style={{width:'48%'}} friendlyName='First Name' name="firstName" value={userData.firstName} setValue={setValue}/>
