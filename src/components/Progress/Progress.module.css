@@ -241,8 +241,9 @@
 
 .font-text{
    font-weight: 500;
-   font-size: 16px;
+   font-size: 14px;
    color: #2b3140;
+   margin: 8px 0;
 }
 
 .skillBar{
@@ -280,9 +281,9 @@
 }
 
 .backBtn{
-  position:absolute;
+  /* position:absolute;
   bottom:30px;
-  right:50px;
+  right:50px; */
   /* color:blue; */
   font-weight: 500;
   letter-spacing: 10px;
@@ -290,14 +291,56 @@
   border-bottom: 2px solid black;
   border-right: 2px solid black;
   cursor: pointer;
+  height: 40px;
 }
 
 .downloadBtn{
-  position:absolute;
+  /* position:absolute;
   bottom:30px;
-  right:200px;
+  right:200px; */
   margin-bottom: -2.9px;
   font-weight: 500;
-  font-size: 26px;
+  font-size: 30px;
+  margin-right: 25px;
   cursor: pointer;
 }
+
+.resumeRight{
+ width: 30%;
+ height: 100%;
+ /* padding: 1%; */
+ /* background-color: #1d3251; */
+}
+
+.templateholder{
+  height: 85%;
+  background-color: white;
+  box-sizing: border-box;
+  margin-left: 2%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.resumeselector{
+  width: 30%;
+  height: 125px;
+  /* background-color: #2b3140; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.btnholder{
+  padding: 1%;
+  height: 15%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+

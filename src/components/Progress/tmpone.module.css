@@ -1,0 +1,97 @@
+.resume-header-white{
+    height: 180px;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.resume-header-white h2{
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.resume-header-white h2:nth-child(2){
+    font-size: 42px;
+    margin-top: -10px;
+}
+
+
+.resume-header-white h4{
+    margin: 0;
+    font-weight: 400;
+}
+
+.address{
+    display: flex;
+    width: 100%;
+    padding: 0 40px;
+    /* justify-content: space-around */
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    /* margin-top: 10px; */
+    margin-top: 26px;
+}
+
+.about-me{
+    background-color: white;
+    padding: 10px 10px 10px 40px;
+}
+
+
+.about-me h2,p{
+    margin: 0;
+}
+
+
+.skills h2{
+    margin: 0;
+}
+
+.about-me h2,.skills h2,.borderheading{
+    border-bottom: 2px solid #000;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+}
+
+
+.skills{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 40px;
+    background-color: white;
+    /* color: rgb(78, 78, 78); */
+}
+
+.skills p{
+    margin: 0;
+}
+
+.skillholder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 2.5px 0;
+}
+
+.skillholder p{
+    width: 60%;
+    font-size: 14px;
+}
+
+.progress{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* background-color: rgb(41, 41, 41);
+    background-color: rgb(145, 145, 145); */
+}

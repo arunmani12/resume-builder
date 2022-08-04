@@ -29,8 +29,6 @@ const Progress = (): JSX.Element => {
     lastName: "",
   });
 
-  
-  console.log(userData)
 
 
   const setObject = (name:Name,data:Data) =>{

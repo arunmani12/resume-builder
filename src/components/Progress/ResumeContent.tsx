@@ -46,7 +46,7 @@ const ResumeContent = ({
             {userData.address.map((d, i) => (
               <p className={classes["font-text"]} key={i}>
                 <i
-                  style={{ marginRight: "10px" }}
+                  style={{ marginRight: "10px"}}
                   className={d.icon}
                 ></i>
                 {d.value}
