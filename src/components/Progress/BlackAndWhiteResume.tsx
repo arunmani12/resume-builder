@@ -13,35 +13,7 @@ const BlackAndWhiteResume = ({
   componentRef: React.MutableRefObject<null>;
 }) => {
 
-  // const addressWithoutStreet = userData.address.filter(d=>d.name==='Full Address')
-  // const addressObject:object = []
 
-  // const [resumeAddress,setResumeAddress] = useState<UserAddress[]>([])
-
-  // useEffect(() => {
-  //   let city = userData.address.find(d=>d.name==="City")
-  //   let State = userData.address.find(d=>d.name==='State')
-  
-  //   const cityState:UserAddress = {
-  //     value:city?.value + '/' + State?.value,
-  //     name:"city/state",
-  //     icon:State?.icon!
-  //   }
-  
-  //   const addedCityStateAddress = userData.address
-
-  //   console.log(addedCityStateAddress)
-
-  //  if(addedCityStateAddress.find(d=>d.name==="city/state")) return
-  
-  //   addedCityStateAddress.push(cityState)
-  
-  //   const addressToRender = addedCityStateAddress.filter(d=>{
-  //     return (d.name !== "City" && d.name !== "State" && d.name !== "Full Address")
-  //   })
-  //   setResumeAddress(addressToRender)
-  // }, [])
-  
 
   const getAddress = ():UserAddress[]=>{
     let city = userData.address.find(d=>d.name==="City")
@@ -65,7 +37,6 @@ const BlackAndWhiteResume = ({
 
 
   
-  //  console.log(resumeAddress)
 
 
   return (
