@@ -8,7 +8,7 @@ const MainSection = ():JSX.Element => {
     <div className={classes.main}>
       <h3>Create awesome resumes that seeks everyone's attention &#128525;</h3>
       <p>Still waiting ka , Just give a try</p>
-      <Link style={{textAlign:'center',textDecoration:'none',width:'90px'}} to={"/resume"} className={btnstyles['custom-btn'] + ' ' + btnstyles['btn-bh']}>Create</Link>
+      <Link style={{textAlign:'center',textDecoration:'none',margin:'2rem 0',width:'90px'}} to={"/resume"} className={btnstyles['custom-btn'] + ' ' + btnstyles['btn-bh']}>Create</Link>
     </div>
   )
 }
