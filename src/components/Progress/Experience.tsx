@@ -55,7 +55,7 @@ const Model = ({
       <div className={classes["skill-model"]} style={{ marginTop: "3rem" }}>
         <p className={classes.cross} onClick={()=>setModelOpen(false)}>&#10005;</p>
         <form>
-          <label>Posisiton</label>
+          <label>Position</label>
           <input
             type="text"
             style={{ marginBottom: "1rem" }}
@@ -71,7 +71,7 @@ const Model = ({
             onChange={(e) => onChanceHandler(e, "companyName")}
           />
 
-          <label>Durination</label>
+          <label>Duration</label>
           <input
             type="text"
             style={{ marginBottom: "1rem" }}
@@ -108,7 +108,7 @@ const Experience = ({
   };
 
   return (
-    <div style={{height:'83%'}}>
+    <div style={{height:'83%',lineHeight:'1.5'}}>
       {modelOpen && <Model addExperience={addExperience} setModelOpen={setModelOpen} />}
       <div className={classes["add-skills"]} onClick={()=>setModelOpen(true)}>Add Experience +</div>
 
@@ -116,9 +116,9 @@ const Experience = ({
         {
         experience.map((d,i)=>(
           <div key={i} className={classes.education}>
-            <p>{d.companyName}</p>
-            <p>{d.posisitonName}</p>
-            <p>{d.durination}</p>
+            <p style={{textTransform:'uppercase',color:'#17b486'}}>{d.companyName}</p>
+            <p style={{color:'#777'}}>{d.posisitonName}</p>
+            <p style={{fontSize:'14px'}}>{d.durination}</p>
           </div>
         ))
       }

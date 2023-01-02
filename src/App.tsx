@@ -4,10 +4,13 @@ import Progress from "./components/Progress/Progress";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
+import Template from "./components/template/Template";
+
 
 function App() {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
+  const [currentTmp,setcurrentTmp] = useState(0)
 
   const updateMedia = () => {
     setDesktop(window.innerWidth > 1000);
@@ -49,7 +52,8 @@ function App() {
             )
           }
         />
-        {isDesktop && <Route path="/resume" element={<Progress />} />}
+        {isDesktop && <Route  path="/resume" element={<Progress setcurrentTmp={setcurrentTmp} currentTmp={currentTmp}/>} />}
+        {isDesktop && <Route  path="/Templates" element={<Template setcurrentTmp={setcurrentTmp}/>} />}
       </Routes>
     </Router>
   );

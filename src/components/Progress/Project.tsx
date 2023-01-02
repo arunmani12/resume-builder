@@ -57,7 +57,7 @@ const Model = ({
             onChange={(e) => onChanceHandler(e, "name")}
           />
 
-          <label>Describiton</label>
+          <label>Description</label>
           <input
             type="text"
             style={{ marginBottom: "1rem" }}
@@ -92,7 +92,7 @@ const Project = ({project,setObject}:ProjectProps):JSX.Element => {
   };
 
   return (
-    <div style={{height:'83%'}}>
+    <div style={{height:'83%',lineHeight:'1.5'}}>
       {modelOpen && <Model addProject={addProject} setModelOpen={setModelOpen}/>}
       <div className={classes["add-skills"]} onClick={()=>setModelOpen(true)}>Add Project +</div>
 
@@ -100,8 +100,9 @@ const Project = ({project,setObject}:ProjectProps):JSX.Element => {
         {
         project.map((d,i)=>(
           <div key={i} className={classes.education}>
-            <p>{d.name}</p>
-            <p>{d.about}</p>
+             <p style={{textTransform:'uppercase',color:'#17b486'}}>{d.name}</p>
+            <p style={{color:'#777'}}>{d.about}</p>
+
           </div>
         ))
       }

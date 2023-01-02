@@ -125,7 +125,7 @@ const Education = ({
 
 
   return (
-    <div style={{height:'83%'}}>
+    <div style={{height:'83%',lineHeight:'1.5'}}>
       <div className={classes["add-skills"]} onClick={() => setModelOpen(true)}>
         Add Education +
       </div>
@@ -134,9 +134,9 @@ const Education = ({
         {
         education.map((d,i)=>(
           <div key={i} className={classes.education}>
-            <p>{d.degree}</p>
-            <p>{d.educationInstitue}</p>
-            <p>{d.startYear}-{d.endYear}</p>
+            <p style={{textTransform:'uppercase',color:'#17b486'}}>{d.educationInstitue}</p>
+            <p style={{color:'#777'}}>{d.degree}</p>
+            <p style={{fontSize:'14px'}}>{d.startYear}-{d.endYear}</p>
           </div>
         ))
       }

@@ -15,14 +15,14 @@ import Experience from "./Experience";
 import Project from "./Project";
 
 
-const Progress = (): JSX.Element => {
+const Progress = ({ setcurrentTmp, currentTmp }: { setcurrentTmp: React.Dispatch<React.SetStateAction<number>>, currentTmp: number}): JSX.Element => {
   const [step, setStep] = useState<number>(1);
   const [userData, setUserData] = useState<UserObject>({
     address: [],
     skills: [],
     education: [],
-    experience:[],
-    project:[],
+    experience: [],
+    project: [],
     about: "",
     firstName: "",
     position: "",
@@ -31,7 +31,7 @@ const Progress = (): JSX.Element => {
 
 
 
-  const setObject = (name:Name,data:Data) =>{
+  const setObject = (name: Name, data: Data) => {
     setUserData((prv) => {
       return { ...prv, [name]: data };
     });
@@ -48,7 +48,7 @@ const Progress = (): JSX.Element => {
 
   return (
     <div className={classes.progress}>
-     {step!==7 &&<> <div className={classes["progress-content"]}>
+      {step !== 7 && <> <div className={classes["progress-content"]}>
         {step === 1 && (
           <About individualValue={individualValue} userData={userData} />
         )}
@@ -57,31 +57,31 @@ const Progress = (): JSX.Element => {
         )}
 
         {step === 3 && (
-          <Skills setObject={setObject} skills={userData.skills}/>
+          <Skills setObject={setObject} skills={userData.skills} />
         )}
 
         {step === 4 && (
           <Education
-          setObject={setObject}
+            setObject={setObject}
             education={userData.education}
           />
         )}
         {
-          step===5 && (
-            <Experience setObject={setObject} experience={userData.experience}/>
+          step === 5 && (
+            <Experience setObject={setObject} experience={userData.experience} />
           )
         }
         {
-          step===6 && (
-            <Project setObject={setObject} project={userData.project}/>
+          step === 6 && (
+            <Project setObject={setObject} project={userData.project} />
           )
         }
         {/* progress Bar */}
         <ProgressBar userData={userData} currentStep={step} setStep={setStep} totalStep={6} />
       </div>
-       </>
+      </>
       }
-      {step===7 && <Resume setStep={setStep} userData={userData}/>}
+      {step === 7 && <Resume setcurrentTmp={setcurrentTmp} currentTmp={currentTmp} setStep={setStep} userData={userData} />}
     </div>
   );
 };

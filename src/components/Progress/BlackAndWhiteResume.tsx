@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import classes from "./Progress.module.css";
 import { UserObject,UserAddress } from "../types/progress";
 import styles from './tmpone.module.css'
-import { useEffect } from "react";
 
 
 const BlackAndWhiteResume = ({

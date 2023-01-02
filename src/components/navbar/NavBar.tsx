@@ -5,7 +5,6 @@ const NavBar = (): JSX.Element => {
   const navBarLinks: string[] = [
     "Home",
     "Templates",
-    "Contanct",
     "GitHub",
   ];
 
@@ -18,7 +17,7 @@ const NavBar = (): JSX.Element => {
         <ul>
           {navBarLinks.map((d, i) => (
             <li key={i}>
-              <Link to={d==='Home' ? '/' : '#'}>{d}</Link>
+              <Link to={d==='Home' ? '/' : `/${d}`}>{d}</Link>
             </li>
           ))}
         </ul>

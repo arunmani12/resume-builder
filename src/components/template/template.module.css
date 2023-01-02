@@ -1,0 +1,29 @@
+.temp{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.temp h1{
+    font-weight: 300;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.imgcontainer{
+    padding: 5px;
+}
+
+.temp img{
+    height: 421px;
+    margin-right: 40px;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.temp img:hover{
+    border: 1px solid black;
+    /* box-sizing: border-box; */
+}
