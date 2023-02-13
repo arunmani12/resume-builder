@@ -6,12 +6,16 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import  { useState, useEffect } from "react";
 import Template from "./components/template/Template";
-
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
+// import {IsAuthorized} from './auth'
 
 function App() {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
   const [currentTmp,setcurrentTmp] = useState(0)
 
+  const [IsAuthorized,setIsAuthorized] = useState(false)
+ 
   const updateMedia = () => {
     setDesktop(window.innerWidth > 1000);
   };
@@ -37,7 +41,7 @@ function App() {
 
   return (
     <Router>
-      {isDesktop && <NavBar />}
+      {isDesktop && <NavBar IsAuthorized={IsAuthorized} setIsAuthorized={setIsAuthorized}/>}
       {Toast}
       <Routes>
         <Route
@@ -53,7 +57,14 @@ function App() {
           }
         />
         {isDesktop && <Route  path="/resume" element={<Progress setcurrentTmp={setcurrentTmp} currentTmp={currentTmp}/>} />}
-        {isDesktop && <Route  path="/Templates" element={<Template setcurrentTmp={setcurrentTmp}/>} />}
+        {isDesktop && <Route  path="/Templates" element={<Template setcurrentTmp={setcurrentTmp}/>}/>}
+
+
+
+        {!IsAuthorized && isDesktop && <Route  path="/login"  element={<Login setIsAuthorized={setIsAuthorized}/>} />}
+        {!IsAuthorized && isDesktop && <Route  path="/Register"  element={<Register setIsAuthorized={setIsAuthorized}/>} />}
+
+        
       </Routes>
     </Router>
   );

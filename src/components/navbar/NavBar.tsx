@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import classes from './navbar.module.css'
 
-const NavBar = (): JSX.Element => {
+
+
+const NavBar = ({IsAuthorized,setIsAuthorized}:{IsAuthorized:boolean,setIsAuthorized:React.Dispatch<React.SetStateAction<boolean>>}): JSX.Element => {
   const navBarLinks: string[] = [
     "Home",
     "Templates",
@@ -11,7 +13,7 @@ const NavBar = (): JSX.Element => {
   return (
     <header className={classes.header}>
       <Link className={classes.logo} to="/">
-        A/M
+        R/B
       </Link>
       <nav className={classes.nav}>
         <ul>
@@ -20,6 +22,11 @@ const NavBar = (): JSX.Element => {
               <Link to={d==='Home' ? '/' : `/${d}`}>{d}</Link>
             </li>
           ))}
+          <li>
+         {!IsAuthorized && <Link to='/login'>Login</Link>}
+          {!IsAuthorized && <Link to='/register'>Register</Link>}
+          {IsAuthorized && <Link onClick={()=>setIsAuthorized(prv=>!prv)} to='/'>Logout</Link>}
+         </li>
         </ul>
       </nav>
     </header>
